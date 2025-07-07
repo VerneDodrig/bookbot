@@ -14,3 +14,18 @@ def count_file_characters(file_text):
     
     return letter_dict
 
+def sort_key(list):
+    return list["num"]
+
+
+def dict_to_list(file_dict):
+    list_dicts = []
+    for values in file_dict:
+        dict_pair = {}
+        dict_pair["char"] = values
+        dict_pair["num"] = file_dict[values]
+        list_dicts.append(dict_pair)
+    list_dicts.sort(key=sort_key, reverse=True)
+    return list_dicts
+
+
